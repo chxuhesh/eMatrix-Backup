@@ -11,9 +11,9 @@ from brother_ql.devicedependent import label_type_specs
 def text(strlist):
     image = Image.new("RGB", (202, 202), "white")
     draw = ImageDraw.Draw(image)
-    result_font = ImageFont.truetype("arial.ttf", size=80)
-    font = ImageFont.load_default()
-    draw.text((10, 30), strlist, font=font, fill='black')
+    result_font = ImageFont.truetype("/usr/share/fonts/truetype/droid/DroidSansFallbackFull.ttf", size=80)
+   # font = ImageFont.load_default()
+    draw.text((10, 30), strlist, font=result_font, fill='black')
     return image
 
 
