@@ -19,11 +19,12 @@ def text(strlist):
 
 def print_image(strlist):
     im = text(strlist)
-    backend = 'pyusb'  # 'pyusb', 'linux_kernal', 'network'
+    backend = 'linux_kernel'  # 'pyusb', 'linux_kernal', 'network'
     model = 'QL-820NWB'  # your printer model.
    # printer = 'usb://0x04f9:0x209d'  # Get these values from the Windows usb driver filter.  Linux/Raspberry Pi uses '/dev/usb/lp0'.
     #printer = 'tcp//192.168.1.108'
-    printer = discover('pyusb')[0]['identifier'][:-2]
+    #printer = discover('pyusb')[0]['identifier'][:-2]
+    printer = '/dev/usb/lp0'
 
     qlr = BrotherQLRaster(model)
     qlr.exception_on_warning = True
